@@ -1,7 +1,7 @@
 FORMAT: 1A
-HOST: http://private-80bd6-luisguevara2.apiary-mock.com
+HOST: http://polls.apiblueprint.org/
 
-# Luisguevara
+# Diplomado3
 
 Sistema de control de tráfico urbano
 
@@ -26,7 +26,7 @@ Atributos Obligatorios:
                 "i_transmision": "12-09-2015 11:00",
                 "fin_transmision": "13-09-2015 12:00",
                 "tamano_video": "2 GB",
-                "descargar_video": "http://ejemplo/download/video_1"
+                
             }
             
 ## Buscar Video [GET]
@@ -76,21 +76,21 @@ Obtener todos los videos
                 "videos": [
                     {
                         "id": 1,
-                        "i_transmision": "05-09-2015 11:00",
-                        "fin_transmision": "06-09-2015 12:00",
+                        "i_transmision": "12-09-2015 11:00",
+                        "fin_transmision": "13-09-2015 12:00",
                         "tamano_video": "1 GB",
                         "descargar_video": "http://ejemplo/download/video_1"
                     },
                     {
                         "id": 2,
-                        "i_transmision": "05-09-2015 11:00",
-                        "fin_transmision": "06-09-2015 12:00",
+                        "i_transmision": "12-09-2015 11:00",
+                        "fin_transmision": "13-09-2015 12:00",
                         "tamano_video": "1 GB",
                         "descargar_video": "http://ejemplo/download/video_2"
                     },{
                         "id": 3,
-                        "i_transmision": "05-09-2015 11:00",
-                        "fin_transmision": "06-09-2015 12:00",
+                        "i_transmision": "12-09-2015 11:00",
+                        "fin_transmision": "12-09-2015 12:00",
                         "tamano_video": "1 GB",
                         "descargar_video": "http://ejemplo/download/video_3"
                     }
@@ -288,7 +288,7 @@ Transmitir video
 
             {
                 "id": 1,
-                "marca":"Camara x HD Pro 1",
+                "marca":"Camara Sony",
                 "fecha_add":"05-09-2015",
                 "ip":"192.168.1.100",
                 "latitud":"-33.000101",
@@ -301,13 +301,13 @@ Transmitir video
                 },
                 "Video":{
                     "id": 1,
-                    "descargar_video": "http://ejemplo/download/video_1"
+                    "descargar_video": "http://lguevara/download/video"
                 },
                 "broadcast":{
                     "id": 1,
-                    "inicio_broadcast":"05-09-2015 18:00",
+                    "inicio_broadcast":"12-09-2015 18:00",
                     "descripción": "Descripción video tiempo real",
-                    "source":"http://ejemplo/broadcast/1/play",
+                    "source":"http://ejemplo/luis/play",
                     "fps":30
                 }
             }
@@ -340,7 +340,7 @@ Atributos Obligatorios:
 
             {
                 "id": 1,
-                "inicio_grabación":"05-09-2015 18:00",
+                "inicio_grabación":"12-09-2015 18:00",
                 "tasa_vehiculo": "-",
                 "tipo_fichero":"avi",
                 "compresion":"format-x",
@@ -348,9 +348,9 @@ Atributos Obligatorios:
                 "total_secuencias":5881,
                 "video":{
                     "id": 2,
-                    "inicio_transmision": "05-09-2015 11:00",
-                    "fin_transmision": "06-09-2015 12:00",
-                    "tamano_video": "1 GB",
+                    "inicio_transmision": "12-09-2015 11:00",
+                    "fin_transmision": "13-09-2015 12:00",
+                    "tamano_video": "2 GB",
                 }
 
             }
@@ -418,14 +418,14 @@ Atributos Obligatorios:
 
             {
                 "id": 1,
-                "inicio_broadcast":"05-09-2015 18:00",
+                "inicio_broadcast":"12-09-2015 18:00",
                 "descripción": "Descripción video tiempo real",
-                "source":"http://ejemplo/broadcast/1/play",
+                "source":"http://ejemplo/luis/play",
                 "fps":30,
                 "camara":{
                     "id": 1,
-                    "marca":"Camara x HD Pro 1",
-                    "fecha_add":"05-09-2015",
+                    "marca":"Camaa Sony",
+                    "fecha_add":"12-09-2015",
                     "ip":"192.168.1.100",
                     "latitud":"-33.000101",
                     "longitud":"-77.01212",
@@ -438,54 +438,7 @@ Atributos Obligatorios:
                 },
                 "video":{
                     "id": 1,
-                    "descargar_video": "http://ejemplo/download/video_1"
+                    "descargar_video": "http://ejemplo/lguevara/video_1"
                 }
             }
             
-## Buscar broadcast [GET]
-
-+ Response 200
-
-    [broadcast][]
-    
-+ Response 404 (application/json)
-
-        { 
-            "error": "Recurso no se encuentra" 
-        }
-
-## Editar broadcast [PATCH]
-
-+ Request (application/json)
-
-        {
-            "descripción": "prueba descripción broadcast"
-        }
-
-+ Response 200
-    
-        { 
-            "result": True,
-            "message": "broadcast editado con éxito"
-        }
-
-+ Response 404
-
-        { 
-            "error": "Recurso no disponible"
-        }
-
-+ Response 400
-
-        { 
-            "error": "Fallo al modificar el Recurso"
-        }
-
-## Detener broadcast [DELETE]
-
-+ Response 200
-
-        { 
-            "result": True,
-            "message": "Se detuvo broadcast"
-        }
