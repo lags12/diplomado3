@@ -307,5 +307,29 @@ Transmitir video
 + Response 200
 
     [Transmitir video][]
+    
+## Mapa [/Mapa/{id}]
+Recurso Mapa
 
+Atributos Obligatorios: 
+
+- `id`          Asignado
+- `localizacion`
+- `hora`
+- `condiciones_clima`
+
++ Parameters
+    + id (required, int) ... PK Mapa
+
++ Model (application/hal+json)
+
+    + Body
+
+            {
+                "id": 1,
+                "localizacion":"lugar del mapa",
+                "fecha_hora":"01-01-2015 00:01",
+                "condiciones_clima`":" clima",
+                                    
+            }
 
