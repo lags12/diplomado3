@@ -5,6 +5,38 @@ HOST: http://polls.apiblueprint.org/
 
 Sistema de control de tráfico urbano
 
+## Envio de datos [/Datos/{id}]
+Recurso Datos
+
+Atributos Obligatorios: 
+
+- `id`          Asignado
+- `transmision_estadistica_trafico`
+- `nego_param`
+- `alarmas`
+
++ Parameters
+    + id (required, int) ... PK Datos
+
++ Model (application/hal+json)
+
+    + Body
+
+            {
+                "id": 1,
+                "transmision_estadistica_trafico":"informacion de trafico",
+                "nego_param":"negociacion de paarmetros",
+                "alarmas":" genera y transmite alarmas",
+                                    
+            }
+
+## Usuarios del sistema [GET]
+
++ Response 200
+
+        [Envio de datos][Datos]
+        
+
 ## Videos [/videos/{id}]
 Recurso_videos
 
@@ -346,35 +378,4 @@ Atributos Obligatorios:
         { 
             "result": True
         }   
-        
-## Envio de datos [/Datos/{id}]
-Recurso Datos
-
-Atributos Obligatorios: 
-
-- `id`          Asignado
-- `transmision_estadistica_trafico`
-- `nego_param`
-- `alarmas`
-
-+ Parameters
-    + id (required, int) ... PK Datos
-
-+ Model (application/hal+json)
-
-    + Body
-
-            {
-                "id": 1,
-                "transmision_estadistica_trafico":"informacion de trafico",
-                "nego_param":"negociacion de paarmetros",
-                "alarmas":" genera y transmite alarmas",
-                                    
-            }
-
-## Usuarios del sistema [GET]
-
-+ Response 200
-
-        [Envio de datos][Datos]
         
