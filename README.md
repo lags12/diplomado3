@@ -3,7 +3,39 @@ HOST: http://polls.apiblueprint.org/
 
 # Diplomado Unidad 3
 
-Sistema de control de tráfico urbano
+SISTEMA DE CONTROL DE TRAFICO URBANO
+
+## Envio de datos [/Usuarios/{id}]
+Recurso Datos
+
+Atributos Obligatorios: 
+
+- `id`          Asignado
+- `transmision_estadistica_trafico`
+- `nego_param`
+- `alarmas`
+
++ Parameters
+    + id (required, int) ... PK Datos
+
++ Model (application/hal+json)
+
+    + Body
+
+            {
+                "id": 1,
+                "transmision_estadistica_trafico":"informacion de trafico",
+                "nego_param":"negociacion de paarmetros",
+                "alarmas":" genera y transmite alarmas",
+                                    
+            }
+
+## Lista Informacion de trafico [GET]
+
++ Response 200
+
+        [Envio de datos][Usuarios]
+        
 
 ## Videos [/videos/{id}]
 Recurso_videos
@@ -307,6 +339,43 @@ Transmitir video
 + Response 200
 
     [Transmitir video][]
+    
+## Mapa Metereologico [/Mapa/{id}]
+Recurso Mapa
 
+Atributos Obligatorios: 
 
+- `id`          Asignado
+- `localizacion`
+- `hora`
+- `condiciones_clima`
 
++ Parameters
+    + id (required, int) ... PK Mapa
+
++ Model (application/hal+json)
+
+    + Body
+
+            {
+                "id": 1,
+                "localizacion":"lugar del mapa",
+                "fecha_hora":"01-01-2015 00:01",
+                "condiciones_clima`":" clima",
+                                    
+            }
+
+## Lista un mapa [GET]
+
++ Response 200
+
+        [Mapa Metereologico][Mapa]
+        
+## Borra un mapa [DELETE]
+
++ Response 200
+
+        { 
+            "result": True
+        }   
+        
